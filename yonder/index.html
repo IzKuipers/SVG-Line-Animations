@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      svg {
+        width: 768px;
+        height: 768px;
+        opacity: 1;
+        animation: hide 0.5s 3s forwards;
+      }
+
+      .one {
+        stroke-dasharray: 685;
+        stroke-dashoffset: 685;
+        animation: dash 2s 1s linear forwards;
+      }
+
+      .two {
+        stroke-dasharray: 178;
+        stroke-dashoffset: 178;
+        animation: dash 1s 2s linear forwards;
+      }
+
+      .wrapper {
+        position: relative;
+        width: 768px;
+        height: 768px;
+        scale: 0.9;
+        animation: scale-in 0.5s 3s forwards;
+      }
+
+      .wrapper > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 768px;
+        height: 768px;
+        paint-order: stroke;
+      }
+
+      .glow {
+        width: 1024px;
+        height: 1024px;
+        translate: -128px -128px;
+        opacity: 0;
+        animation: glow-in 0.5s 3s forwards;
+      }
+
+      .logo {
+        animation: show 0.5s 3s forwards;
+        opacity: 0;
+      }
+
+      @keyframes glow-in {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scale-in {
+        to {
+          scale: 1;
+        }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes show {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes hide {
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="/yonder/glow.svg" alt="" class="glow" />
+
+      <svg
+        width="300"
+        height="300"
+        viewBox="0 0 300 300"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M124.23 43H85L119.36 166.83H150.01L138.57 213.62L173.59 208.93L215.44 43H176.43L157.53 128.57H144.32L124.23 43Z"
+          stroke="#ffffff"
+          stroke-width="4"
+          class="one"
+          stroke-linecap="round"
+        />
+        <path
+          d="M175.78 224.91H120.21V257.95H175.78V224.91Z"
+          stroke="#FD6555"
+          stroke-width="4"
+          class="two"
+          stroke-linecap="round"
+        />
+      </svg>
+      <img src="/yonder/logo.svg" alt="" class="logo" />
+    </div>
+  </body>
+</html>

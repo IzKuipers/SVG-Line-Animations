@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      svg {
+        width: 768px;
+        height: 768px;
+        opacity: 1;
+        animation: hide 0.5s 3.5s forwards;
+      }
+
+      .one {
+        stroke-dasharray: 754;
+        stroke-dashoffset: 754;
+        animation: dash 2s linear forwards;
+      }
+
+      .two {
+        stroke-dasharray: 402;
+        stroke-dashoffset: 402;
+        animation: dash 2s 1s linear forwards;
+      }
+
+      .three {
+        stroke-dasharray: 1202;
+        stroke-dashoffset: 1202;
+        animation: dash 3s 0.5s linear forwards;
+      }
+
+      .wrapper {
+        position: relative;
+        width: 768px;
+        height: 768px;
+        scale: 0.9;
+        animation: scale-in 0.5s 3.5s forwards;
+      }
+
+      .wrapper > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 768px;
+        height: 768px;
+      }
+
+      .glow {
+        width: 1024px;
+        height: 1024px;
+        translate: -128px -128px;
+        opacity: 0;
+        animation: glow-in 0.5s 3.5s forwards;
+      }
+
+      .logo {
+        animation: show 0.5s 3.5s forwards;
+        opacity: 0;
+      }
+
+      @keyframes glow-in {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scale-in {
+        to {
+          scale: 1;
+        }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes show {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes hide {
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="/porto/glow.svg" alt="" class="glow" />
+
+      <svg
+        width="768"
+        height="768"
+        viewBox="0 0 768 768"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="384"
+          cy="384"
+          r="120"
+          stroke="#4B4B4B"
+          class="one"
+          stroke-width="4"
+        />
+        <circle
+          cx="384"
+          cy="384"
+          r="64"
+          stroke="#FFA200"
+          class="two"
+          stroke-width="4"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M384.146 476.146C379.509 476.146 375.083 478.399 372.764 482.414L352.146 518.126C334.473 548.736 344.961 587.878 375.572 605.551C406.183 623.224 445.324 612.736 462.997 582.126L654.997 249.572C672.671 218.961 662.183 179.819 631.572 162.146C600.961 144.473 561.819 154.961 544.146 185.572L480.063 296.567C467.671 318.031 470.872 344.586 474.912 369.038C475.724 373.954 476.146 379.001 476.146 384.146C476.146 434.956 434.956 476.146 384.146 476.146Z"
+          stroke="#018AFA"
+          class="three"
+          stroke-width="4"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M392.572 162.146C361.961 144.473 322.819 154.961 305.146 185.572L113.146 518.126C95.4732 548.736 105.961 587.878 136.572 605.551C167.183 623.224 206.324 612.736 223.998 582.126L288.076 471.139C300.409 449.778 297.298 423.361 293.342 399.015C292.555 394.175 292.146 389.208 292.146 384.146C292.146 333.336 333.336 292.146 384.146 292.146C388.499 292.146 392.645 290.019 394.821 286.25L415.997 249.572C433.671 218.961 423.183 179.819 392.572 162.146Z"
+          stroke="#018AFA"
+          class="three"
+          stroke-width="4"
+        />
+      </svg>
+      <img src="/porto/logo.svg" alt="" class="logo" />
+    </div>
+  </body>
+</html>
