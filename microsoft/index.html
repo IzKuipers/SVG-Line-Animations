@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      svg {
+        width: 768px;
+        height: 768px;
+        opacity: 1;
+        animation: hide 0.5s 4.5s forwards;
+      }
+
+      .one {
+        stroke-dasharray: 1340;
+        stroke-dashoffset: 1340;
+        animation: dash 2s linear forwards;
+      }
+
+      .two {
+        stroke-dasharray: 1340;
+        stroke-dashoffset: 1340;
+        animation: dash 2s 1s linear forwards;
+      }
+
+      .three {
+        stroke-dasharray: 1340;
+        stroke-dashoffset: 1340;
+        animation: dash 3s 0.5s linear forwards;
+      }
+
+      .four {
+        stroke-dasharray: 1340;
+        stroke-dashoffset: 1340;
+        animation: dash 3s 1.5s linear forwards;
+      }
+
+      .wrapper {
+        position: relative;
+        width: 768px;
+        height: 768px;
+        scale: 0.9;
+        animation: scale-in 0.5s 4.5s forwards;
+      }
+
+      .wrapper > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 768px;
+        height: 768px;
+      }
+
+      .glow {
+        width: 1024px;
+        height: 1024px;
+        translate: -128px -128px;
+        opacity: 0;
+        animation: glow-in 0.5s 4.5s forwards;
+      }
+
+      .logo {
+        animation: show 0.5s 4.5s forwards;
+        opacity: 0;
+      }
+
+      @keyframes glow-in {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scale-in {
+        to {
+          scale: 1;
+        }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes show {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes hide {
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="/microsoft/glow.svg" alt="" class="glow" />
+
+      <svg
+        width="1024"
+        height="1024"
+        viewBox="0 0 1024 1024"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M161.391 161.391H495.304V495.304H161.391V161.391Z"
+          stroke-width="4"
+          stroke="#F35325"
+          class="one"
+        />
+        <path
+          d="M528.696 161.391H862.609V495.304H528.696V161.391Z"
+          stroke-width="4"
+          stroke="#81BC06"
+          class="two"
+        />
+        <path
+          d="M161.391 528.696H495.304V862.609H161.391V528.696Z"
+          stroke-width="4"
+          stroke="#05A6F0"
+          class="three"
+        />
+
+        <path
+          d="M528.696 528.696H862.609V862.609H528.696V528.696Z"
+          stroke-width="4"
+          stroke="#FFBA08"
+          class="four"
+        />
+      </svg>
+      <img src="/microsoft/logo.svg" alt="" class="logo" />
+    </div>
+  </body>
+</html>
