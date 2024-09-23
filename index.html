@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.container {
+        display: grid;
+        grid-template-columns: repeat(3, 512px);
+        gap: 30px;
+      }
+
+      iframe {
+        width: 512px;
+        height: 512px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <iframe src="/apple/index.html" frameborder="0"></iframe>
+      <iframe src="/microsoft/index.html" frameborder="0"></iframe>
+      <iframe src="/porto/index.html" frameborder="0"></iframe>
+      <iframe src="/reddit/index.html" frameborder="0"></iframe>
+      <iframe src="/sacruda/index.html" frameborder="0"></iframe>
+      <iframe src="/yonder/index.html" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>
