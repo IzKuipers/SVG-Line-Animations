@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      svg {
+        width: 256px;
+        height: 256px;
+        opacity: 1;
+        animation: hide 0.5s 5s forwards;
+        scale: -1 1;
+      }
+
+      .one {
+        stroke-dasharray: 240;
+        stroke-dashoffset: 240;
+        animation: dash 2s 3s linear forwards;
+      }
+
+      .two {
+        stroke-dasharray: 232;
+        stroke-dashoffset: 232;
+        animation: dash 2s 1s linear forwards;
+      }
+
+      .wrapper {
+        position: relative;
+        width: 256px;
+        height: 256px;
+      }
+
+      .wrapper > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 256px;
+        height: 256px;
+        paint-order: stroke;
+      }
+
+      .logo {
+        animation: show 0.5s 5s forwards;
+        opacity: 0;
+      }
+
+      @keyframes glow-in {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scale-in {
+        to {
+          scale: 1;
+        }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes show {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes hide {
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <svg
+        width="70"
+        height="71"
+        viewBox="0 0 70 71"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32.3724 1.17345C33.8336 0.435637 35.5586 0.434734 37.0199 1.17247C37.9154 1.62461 38.6599 2.32907 39.1615 3.19786L66.3919 50.3629C66.9442 51.3194 66.6169 52.543 65.6605 53.0953C64.8706 53.5509 63.8609 53.2794 63.406 52.489L40.973 13.5065C40.27 12.2848 39.2254 11.2948 37.9681 10.6578C35.9107 9.61567 33.4796 9.61563 31.4222 10.6578C30.1649 11.2947 29.1203 12.2848 28.4173 13.5065L5.9818 52.4907C5.52784 53.2795 4.51998 53.5503 3.73177 53.0953C2.77533 52.543 2.44807 51.3194 3.00032 50.3629L30.2318 3.19689C30.7333 2.32848 31.4772 1.62548 32.3724 1.17345Z"
+          stroke="white"
+          class="one"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M37.0198 14.3646C35.5585 13.6269 33.8337 13.6269 32.3724 14.3647V14.3647C31.477 14.8168 30.7329 15.5203 30.2314 16.389L3.50001 62.689C2.67158 64.1239 3.1632 65.9586 4.59809 66.7871L9.79426 69.7871C11.2291 70.6155 13.0639 70.1239 13.8923 68.689L33.83 34.1558C34.2149 33.4891 35.1772 33.4891 35.5621 34.1558L55.5 68.689C56.3285 70.1239 58.1632 70.6155 59.5981 69.7871L64.7943 66.7871C66.2291 65.9586 66.7208 64.1239 65.8923 62.689L39.1611 16.3892C38.6595 15.5204 37.9153 14.8168 37.0198 14.3646V14.3646Z"
+          stroke="white"
+          class="two"
+        />
+      </svg>
+
+      <img src="/v7/logo.svg" alt="" class="logo" />
+    </div>
+  </body>
+</html>
